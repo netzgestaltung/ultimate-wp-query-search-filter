@@ -123,7 +123,7 @@ class ulitmatewpsf{
 
 
 		$postid =sanitize_text_field($_POST['uformid']);
-		$themeoption = $cptarray = $taxoarray = $cmfarray =$relarray ='';
+		$themeoption = $cptarray = $taxoarray = $cmfarray =$relarray = [];
 			if(!empty($_POST['uwpname']['cpt'])){
 				foreach($_POST['uwpname']['cpt'] as $cv){
 						$cptarray[] = sanitize_text_field($cv);
