@@ -259,10 +259,9 @@ if (!class_exists('uwpqsfprocess')) {
           }
           return $query;
         }
-
       }
-
     } //end for search
+    
     function uwpqsf_ajax() {
       $postdata = parse_str($_POST['getdata'], $getdata);
       $formid = $getdata['uformid'];
@@ -290,8 +289,11 @@ if (!class_exists('uwpqsfprocess')) {
           if ( strpos($getdata['orderby'], '_') === 0 ) { // starts with "_" detects meta fields
             $ordertype = 'meta_value_num';
             $ordermeta = $getdata['orderby'];
+          } else {
+            $ordertype = $getdata['orderby'];
           }
         }
+        
         $number = !empty($options[0]['resultc']) ? $options[0]['resultc'] : $default_number;
 
         $keyword = !empty($getdata['skeyword']) ? sanitize_text_field($getdata['skeyword']) : null;
